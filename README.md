@@ -1,10 +1,12 @@
-# 创新实验第15周：第6组 Flutter Android 真机验收项目
+# Flutter Android 真机验收看板
 
 本仓库用于完成第15周课堂任务：在第14周 Flutter Hello World 与 GitHub 提交练习基础上，整理小组 Flutter 项目，并把最终版本运行到真实 Android 手机上完成验收。
 
+**项目口号**：用github协作，把第十四周个人hello world升级成小组真机运行结果
+
 - GitHub 仓库：<https://github.com/JinJinJinyh/innovation-week15-team-device>
 - 项目名称：Flutter Android 真机验收看板
-- 小组名称：第6组 创新实验团队
+- 小组名称：第六组
 - App 显示名称：Android真机展示
 - 当前验收日期：2026-06-12
 
