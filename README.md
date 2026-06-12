@@ -149,4 +149,4 @@ android/                               Android 平台工程配置
 
 - 照片中不应出现聊天记录、手机号、定位等隐私信息；
 - README 中的姓名和分工应与课堂提交材料一致；
-- 如果后续替换照片，请保持文件名为 `images/android-real-device.jpg`，避免 README 图片链接失效。
+- 如果后续替换照片，请保持文件名为 `images/android-real-device.jpg`，避免 README 的图片链接失效。
