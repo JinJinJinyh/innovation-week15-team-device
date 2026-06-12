@@ -1,20 +1,37 @@
-# 创新实验第15周：团队协作与 Android 真机运行示例
+# 创新实验第15周：第6组 Flutter Android 真机验收项目
 
-本项目用于第15周课堂任务：在第14周 Flutter Hello World 和 GitHub 提交练习的基础上，小组通过 Pull Request 协作修改同一个 Flutter 项目，并把最终版本运行到真实 Android 手机上。
+本仓库用于完成第15周课堂任务：在第14周 Flutter Hello World 与 GitHub 提交练习基础上，整理小组 Flutter 项目，并把最终版本运行到真实 Android 手机上完成验收。
 
-## 最终要提交什么
+- GitHub 仓库：<https://github.com/JinJinJinyh/innovation-week15-team-device>
+- 项目名称：Flutter Android 真机验收看板
+- 小组名称：第6组 创新实验团队
+- App 显示名称：Android真机展示
+- 当前验收日期：2026-06-12
 
-每组需要提交：
+## 课堂任务要求对照
 
-1. GitHub 原始仓库链接。
-2. 5 名组员的 Fork、分支、commit 或 Pull Request 证据。
-3. 组长合并 PR 后的最终 `main` 分支截图。
-4. 真实 Android 手机运行本应用的照片。
-5. README 中展示真机照片和小组分工。
+| 要求 | 本仓库完成情况 |
+| --- | --- |
+| 创建 GitHub 原始仓库 | 已创建 `innovation-week15-team-device` 仓库 |
+| 小组成员基于 Flutter 项目协作修改 | 已在 [lib/main.dart](lib/main.dart) 中完成小组名称、成员分工、真机检查项和证据规则 |
+| 组长合并最终版本到 `main` | 当前最终版本整理在 `main` 分支 |
+| App 运行到真实 Android 手机 | 已在 PKB110 Android 真机上运行成功 |
+| README 展示真机照片和分工 | 本 README 已补充成员分工、运行记录和真机照片 |
 
-## 推荐协作方式
+## 小组成员与分工
 
-本周统一使用 Fork + Pull Request：
+| 角色 | 姓名 | 负责内容 | 对应文件/区域 |
+| --- | --- | --- | --- |
+| 组长 | 金宇航 | 创建原始仓库、维护 `main`、审核最终版本、组织真机运行与证据提交 | GitHub 仓库、README、真机运行 |
+| 组员 A | 文祺武 | 修改小组名称、项目标题和项目口号 | [lib/main.dart](lib/main.dart) 中 `groupName`、`projectTitle`、`projectSlogan` |
+| 组员 B | 张建波 | 补全小组成员姓名与分工 | [lib/main.dart](lib/main.dart) 中 `members` |
+| 组员 C | 林劲泉 | 补充 Android 真机运行检查项 | [lib/main.dart](lib/main.dart) 中 `realDeviceChecks` |
+| 组员 D | 陈宇博 | 补充最终证据要求，整理真机照片说明 | [lib/main.dart](lib/main.dart) 中 `evidenceRules`、[images/](images/) |
+| 组员 E | 宋俊豪 | 整理项目文档，辅助组长完成最终提交 | README 与验收材料整理 |
+
+## GitHub 协作说明
+
+本次任务推荐采用 Fork + Pull Request 的协作方式：
 
 ```text
 组长创建原始仓库
@@ -34,20 +51,63 @@
 主电脑运行合并后的最终版本
 ```
 
-组员不要直接 push 到组长仓库的 `main` 分支。
+本仓库当前保留最终验收版本。提交前检查项如下：
 
-## 小组分工建议
+- [x] `main` 分支包含最终可运行代码；
+- [x] README 说明小组分工和运行方式；
+- [x] README 引用真实 Android 手机运行照片；
+- [x] 已通过 `flutter analyze`；
+- [x] 已通过 `flutter test`；
+- [x] 已在真实 Android 手机上安装并运行。
 
-| 角色 | 修改位置 | 任务 |
-| --- | --- | --- |
-| 组长 | GitHub 仓库 | 创建仓库、维护 `main`、审核 PR、组织真机运行 |
-| 组员 A | `lib/main.dart` | 修改 `groupName`、`projectTitle`、`projectSlogan` |
-| 组员 B | `lib/main.dart` | 补全 `members` 中的小组成员姓名与分工 |
-| 组员 C | `lib/main.dart` | 补充 `realDeviceChecks` 中的真机检查项 |
-| 组员 D | `lib/main.dart` 和 `README.md` | 补充 `evidenceRules`，提交真机照片说明 |
-| 组员 E | 项目文档 | 整理项目文档、辅助组长完成最终提交 |
+> 如果需要把每位组员的 Fork、分支、commit 或 Pull Request 链接作为课堂证据，请在 GitHub 的 Pull requests 页面补充对应 PR，并把链接继续填入本 README。
 
-## 运行命令
+## Android 真机运行记录
+
+本项目已在真实 Android 手机上运行成功：
+
+| 项目 | 记录 |
+| --- | --- |
+| 运行日期 | 2026-06-12 |
+| 手机型号 | PKB110 |
+| 设备 ID | `DQYDU4T8XG45X4V4` |
+| 系统版本 | Android 16，API 36 |
+| 运行命令 | `flutter run -d DQYDU4T8XG45X4V4 --no-resident` |
+| APK 类型 | Debug APK |
+| APK 路径 | `build/app/outputs/flutter-apk/app-debug.apk` |
+| 前台 Activity | `com.example.group_flutter_android_demo/.MainActivity` |
+
+运行验证命令：
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter devices
+flutter run -d DQYDU4T8XG45X4V4 --no-resident
+```
+
+本地验证结果：
+
+```text
+flutter analyze: No issues found!
+flutter test: All tests passed!
+flutter run: Built build\app\outputs\flutter-apk\app-debug.apk and installed on PKB110
+```
+
+## Android 真机运行照片
+
+合格照片要求：真实 Android 手机正在运行本小组 Flutter 应用，不能使用 Web 截图、模拟器截图或手机本机截图代替。
+
+![Android 真机运行照片](images/android-real-device.jpg)
+
+## GitHub / 验收截图
+
+工作区中提供的另一张截图已整理到仓库图片目录，作为 GitHub 或验收过程材料：
+
+![GitHub 验收截图](images/github-evidence.jpg)
+
+## 如何运行本项目
 
 进入项目根目录后执行：
 
@@ -69,51 +129,24 @@ flutter devices
 flutter run -d 设备ID
 ```
 
-## Android 真机检查
-
-连接手机后先检查：
+如果 `adb devices` 显示 `unauthorized`，请解锁手机并允许 USB 调试，然后重新执行：
 
 ```bash
 adb devices
 flutter devices
 ```
 
-`adb devices` 的状态应为：
+## 目录说明
 
 ```text
-device
+lib/main.dart                         Flutter 应用主页面
+images/android-real-device.jpg         Android 真机运行照片
+images/github-evidence.jpg             GitHub/验收截图材料
+android/                               Android 平台工程配置
 ```
 
-如果显示 `unauthorized`，请解锁手机并允许 USB 调试。
+## 最终提交前隐私检查
 
-## 真机照片要求
-
-请把照片放到：
-
-```text
-images/android-real-device.jpg
-```
-
-并在本 README 中引用：
-
-```markdown
-![Android 真机运行照片](images/android-real-device.jpg)
-```
-
-合格照片必须满足：
-
-- 真实 Android 手机正在运行本小组 Flutter 应用；
-- 不能是 Web 截图；
-- 不能是 Android 模拟器截图；
-- 不能用手机本机截图代替；
-- 必须由第二部手机拍摄；
-- 照片中能看到手持手机；
-- 不包含聊天记录、手机号、定位等隐私信息。
-
-## 本组真机运行照片
-
-提交照片后，下面应显示本组运行效果：
-
-![Android 真机运行照片](images/android-real-device.jpg)
-
-如果图片暂时无法显示，请检查 `images/android-real-device.jpg` 是否已提交，以及文件名大小写是否一致。
+- 照片中不应出现聊天记录、手机号、定位等隐私信息；
+- README 中的姓名和分工应与课堂提交材料一致；
+- 如果后续替换照片，请保持文件名为 `images/android-real-device.jpg`，避免 README 图片链接失效。
